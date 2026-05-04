@@ -1,0 +1,9 @@
+"filename", "language", "C++", "Markdown", "comment", "blank", "total"
+"c:\Projects\Val\Include\Core\Chunk.hpp", "C++", 26, 0, 0, 1, 27
+"c:\Projects\Val\Include\Core\Memory.hpp", "C++", 0, 0, 0, 1, 1
+"c:\Projects\Val\Include\Core\OpCode.hpp", "C++", 25, 0, 8, 8, 41
+"c:\Projects\Val\Include\Core\Value.hpp", "C++", 18, 0, 0, 1, 19
+"c:\Projects\Val\README.md", "Markdown", 0, 1, 0, 0, 1
+"c:\Projects\Val\Src\Core\Chunk.cpp", "C++", 53, 0, 0, 3, 56
+"c:\Projects\Val\Src\Main.cpp", "C++", 15, 0, 0, 3, 18
+"Total", "-", 137, 1, 8, 17, 163

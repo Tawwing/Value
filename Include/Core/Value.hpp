@@ -15,5 +15,7 @@ namespace Val {
         Value(double F) {Type = ValueType::TYPE_FLOAT; Float = F; };
         Value(bool B) {Type = ValueType::TYPE_BOOL; Bool = B; };
         Value(void* O) {Type = ValueType::TYPE_OBJECT; Object = O; };
+
+        void Print() const;
     };
 }

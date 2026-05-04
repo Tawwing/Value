@@ -43,28 +43,28 @@ namespace Val {
     }
     int Chunk::DisassembleInstruction(int Offset) const {
         std::cout << std::setw(4) << Offset << " | " << std::setw(4) << GetLine(Offset) << " ";
-        OpCode instruction = (OpCode)Codes[Offset];
+        OpCode instruction = static_cast<OpCode>(Codes[Offset]);
         switch (instruction) {
-            case OpCode::ADD:           std::cout << "ADD";           return Offset + 1;
-            case OpCode::DIV:           std::cout << "DIV";           return Offset + 1;
-            case OpCode::EQUAL:         std::cout << "EQUAL";         return Offset + 1;
-            case OpCode::TRUE:          std::cout << "TRUE";          return Offset + 1;
-            case OpCode::FALSE:         std::cout << "FALSE";         return Offset + 1;
-            case OpCode::GREATER:       std::cout << "GREATER";       return Offset + 1;
-            case OpCode::GREATER_EQUAL: std::cout << "GREATER_EQUAL"; return Offset + 1;
-            case OpCode::LESS:          std::cout << "LESS";          return Offset + 1;
-            case OpCode::LESS_EQUAL:    std::cout << "LESS_EQUAL";    return Offset + 1;
-            case OpCode::MUL:           std::cout << "MUL";           return Offset + 1;
-            case OpCode::NEGATE:        std::cout << "NEGATE";        return Offset + 1;
-            case OpCode::NIL:           std::cout << "NIL";           return Offset + 1;
-            case OpCode::NOT:           std::cout << "NOT";           return Offset + 1;
-            case OpCode::NOT_EQUAL:     std::cout << "NOT_EQUAL";     return Offset + 1;
-            case OpCode::POP:           std::cout << "POP";           return Offset + 1;
-            case OpCode::PRINT:         std::cout << "PRINT";         return Offset + 1;
-            case OpCode::SUB:           std::cout << "SUB";           return Offset + 1;
-            case OpCode::RETURN:        std::cout << "RETURN";        return Offset + 1;
+            case OpCode::ADD:           std::cout << "ADD";           break;
+            case OpCode::DIV:           std::cout << "DIV";           break;
+            case OpCode::EQUAL:         std::cout << "EQUAL";         break;
+            case OpCode::TRUE:          std::cout << "TRUE";          break;
+            case OpCode::FALSE:         std::cout << "FALSE";         break;
+            case OpCode::GREATER:       std::cout << "GREATER";       break;
+            case OpCode::GREATER_EQUAL: std::cout << "GREATER_EQUAL"; break;
+            case OpCode::LESS:          std::cout << "LESS";          break;
+            case OpCode::LESS_EQUAL:    std::cout << "LESS_EQUAL";    break;
+            case OpCode::MUL:           std::cout << "MUL";           break;
+            case OpCode::NEGATE:        std::cout << "NEGATE";        break;
+            case OpCode::NIL:           std::cout << "NIL";           break;
+            case OpCode::NOT:           std::cout << "NOT";           break;
+            case OpCode::NOT_EQUAL:     std::cout << "NOT_EQUAL";     break;
+            case OpCode::POP:           std::cout << "POP";           break;
+            case OpCode::PRINT:         std::cout << "PRINT";         break;
+            case OpCode::SUB:           std::cout << "SUB";           break;
+            case OpCode::RETURN:        std::cout << "RETURN";        break;
             case OpCode::CONSTANT: {
-                std::cout << "CONSTANT " << Codes[Offset + 1];
+                std::cout << "CONSTANT " << static_cast<int>(Codes[Offset + 1]) << " ";
                 Constants[Codes[Offset + 1]].Print(); std::cout << "\n";
                 return Offset + 2;
             } 

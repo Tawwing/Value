@@ -1,0 +1,74 @@
+Value/
+├── CMakeLists.txt
+├── README.md
+│
+├── Include/                    # All headers (.hpp)
+│   ├── Core/
+│   │   ├── Value.hpp           # Value type, tagged union
+│   │   ├── Chunk.hpp           # Bytecode + constant pool
+│   │   ├── OpCode.hpp          # Opcode enum
+│   │   └── Memory.hpp          # Raw allocator, GC interface
+│   │
+│   ├── VM/
+│   │   ├── VM.hpp              # VM struct, dispatch loop
+│   │   ├── CallFrame.hpp       # Call frame struct
+│   │   └── GC.hpp              # Mark and sweep GC
+│   │
+│   ├── Compiler/
+│   │   ├── Lexer.hpp           # Tokenizer
+│   │   ├── Token.hpp           # Token types + struct
+│   │   ├── Parser.hpp          # AST builder
+│   │   ├── AST.hpp             # AST node definitions
+│   │   └── Compiler.hpp        # AST -> Bytecode
+│   │
+│   ├── Runtime/
+│   │   ├── Object.hpp          # Base heap object
+│   │   ├── StringObject.hpp    # Heap string
+│   │   ├── FunctionObject.hpp  # Heap function
+│   │   ├── ClassObject.hpp     # Heap class definition
+│   │   └── InstanceObject.hpp  # Heap class instance
+│   │
+│   └── Stdlib/
+│       ├── Console.hpp         # Console.print etc
+│       └── Math.hpp            # Math.floor etc
+│
+├── Src/                        # All implementations (.cpp)
+│   ├── Core/
+│   │   ├── Value.cpp
+│   │   ├── Chunk.cpp
+│   │   └── Memory.cpp
+│   │
+│   ├── VM/
+│   │   ├── VM.cpp
+│   │   └── GC.cpp
+│   │
+│   ├── Compiler/
+│   │   ├── Lexer.cpp
+│   │   ├── Parser.cpp
+│   │   ├── AST.cpp
+│   │   └── Compiler.cpp
+│   │
+│   ├── Runtime/
+│   │   ├── Object.cpp
+│   │   ├── StringObject.cpp
+│   │   ├── FunctionObject.cpp
+│   │   ├── ClassObject.cpp
+│   │   └── InstanceObject.cpp
+│   │
+│   ├── Stdlib/
+│   │   ├── Console.cpp
+│   │   └── Math.cpp
+│   │
+│   └── main.cpp
+│
+├── Tests/                      # One test file per module
+│   ├── test_value.cpp
+│   ├── test_vm.cpp
+│   ├── test_lexer.cpp
+│   ├── test_parser.cpp
+│   └── test_gc.cpp
+│
+└── Examples/                   # .val sample programs
+    ├── hello.val
+    ├── closures.val
+    └── classes.val
